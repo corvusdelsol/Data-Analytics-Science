@@ -1,10 +1,6 @@
 /***********************************************************************************/
-/*Program Name:CPoulson_HW05_prog.sas*/
-/*Program Location:C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\STAT 657\
-Homework Assignments\5*/
+/*Program Name:SQL_Joins.sas*/
 /*Author: Casey Poulson*/
-/*Creation Date: 3 February 2022*/
-/*Last Run Date: 11 February 2022*/
 /*Purpose: Outer Joins, Set Operators, and Sub-Queries in PROC SQL*/
 
 
@@ -16,9 +12,9 @@ ODS NOPROCTITLE;
 
 /*Creating librefs hwdata and mylib, and fileref output for pdf output*/
 
-LIBNAME hwdata "C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\STAT 657\Homework Assignments\HWDATA" access=readonly;
-LIBNAME mylib "C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\STAT 657\Homework Assignments\MYLIB" access=readonly;
-FILENAME output "C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\STAT 657\Homework Assignments\5\CPoulson_HW05_output.pdf";
+LIBNAME hwdata "~PATH\HWDATA" access=readonly;
+LIBNAME mylib "~PATH\MYLIB" access=readonly;
+FILENAME output "~PATH\SQL_Joins_output.pdf";
 
 /*(2) Opening the PDF output file destination*/
 
@@ -132,17 +128,3 @@ run;
 /*(8) Closing the PDF ODS output file*/
 
 ODS PDF CLOSE;
-
-/*(11)*/
-/*(a) The grade B was earned by students who took course 2 with no history of*/
-/*them taking course 1 the most often, with 10 of the 20 students with grade B.*/
-
-/*(b) 8 Course_1 students from Fall 2017 also took Course_1 in another term.*/
-
-/*(c) Only 1 student received an F grade in Course 2.*/
-
-/*(d) MISY appears to be the second most common major after STAT for Fall 2017*/
-/*students who took Course_1 only.*/
-
-/*(e) Sort information table is provided for the first table work.fulljoin*/
-
