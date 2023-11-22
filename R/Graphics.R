@@ -1,10 +1,8 @@
-#Homework 07_STAT 604
-#"C:/Users/rockc/OneDrive/Documents/A&M/Spring 2021/STAT 604/Homework/7"
-#Created by Casey Poulson on 02-16-2021
+#Graphics
+#Created by Casey Poulson 
 #Purpose:Using graphics such as histogram and boxplot to display selective data, and adding features to existing graphics.
-#Last executed:02-16-2021
 Sys.time()
-setwd("C:/Users/rockc/OneDrive/Documents/A&M/Spring 2021/STAT 604/Homework/7")
+setwd("~PATH")
 
 #(1)Housekeeping
 #view contents of workspace
@@ -13,7 +11,7 @@ ls()
 #rm(list=ls())
 
 #(2)load HW06 workspace
-load("C:/Users/rockc/OneDrive/Documents/A&M/Spring 2021/STAT 604/Homework/6/HW06.RData")
+load("~PATH.RData")
 #view contents of workspace
 ls()
 
@@ -21,7 +19,7 @@ ls()
 colors()
 
 #(4)direct graphics output to pdf file
-pdf("C:/Users/rockc/OneDrive/Documents/A&M/Spring 2021/STAT 604/Homework/7/CPoulson_HW07_graphics.pdf",width=11,height=8.5)
+pdf("~PATH/graphics.pdf",width=11,height=8.5)
 
 #(5)see maximum of percent positive cases count column
 max(LATEST_USATEX$PCT_POSITIVE_CASES_COUNT)
@@ -67,21 +65,5 @@ rm(Xd,Yd)
 #view contents of workspace
 ls()
 
-#(15)save the HW07 workspace RData file
-save.image("C:/Users/rockc/OneDrive/Documents/A&M/Spring 2021/STAT 604/Homework/7/HW07.RData")
-
-#(16)
-#(a)There are 657 colors listed in colors().
-
-#(b)The infection rate I assume had some fluctuations, but more or less centered around a certain rate (mu).
-#(b)This would explain why it appears to be normally distributed.
-
-#(c)You can see by the middle bar of all the boxplots the mean value in the summary of about 0.02%.
-#(c)The minimum and maximum values (-0.06 & 1.1 respectively) can be seen at the end of the whiskers in the plot.
-#(c)The first and third quartiles, and the median are relatively close to the mean, and can be seen as such on the boxplots.
-
-#(d)No, some days have 0 for the positive new cases count column.
-
-#(e)Thursday had the largest range of new case percentage values.
-
-#(f)Sunday had the smallest range of new case percentage values.
+#(15)save the workspace RData file
+save.image("~PATH/Graphics.RData")
