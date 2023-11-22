@@ -1,9 +1,6 @@
 /***********************************************************************************/
-/*Program Name: CPoulson_HW08_prog.sas*/
-/*Program Location: C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\STAT 657\Homework Assignments\8*/
+/*Program Name: Macro_Vars.sas*/
 /*Author: Casey Poulson*/
-/*Creation Date: 17 March 2022*/
-/*Last Run Date: 20 March 2022*/
 /*Purpose: Practice using macro-variables and macro-programs*/
 
 
@@ -25,9 +22,9 @@ OPTIONS SYMBOLGEN MPRINT NODATE;
 /*Opening the PDF output file destination*/
 
 %let assn = 08;
-FILENAME output "C:\Users\rockc\OneDrive\Documents\A%nrstr(&)M\2022\Spring 2022\STAT 657\Homework Assignments\8\CPoulson_HW&assn._output.pdf";
-LIBNAME MYLIB 'C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\STAT 657\Homework Assignments\MYLIB';
-LIBNAME HWDATA 'C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\STAT 657\Homework Assignments\HWDATA' access=readonly;
+FILENAME output "~PATH\Macro_Vars_output.pdf";
+LIBNAME MYLIB '~PATH\MYLIB';
+LIBNAME HWDATA '~PATH\HWDATA' access=readonly;
 ODS PDF FILE = output;
 
 /*(3) Creating a copy of hwdata.course1 dataset into the temporary work library*/
@@ -137,12 +134,3 @@ QUIT;
 /*Closing the PDF ODS output file*/
 
 ODS PDF CLOSE;
-
-/*(13) */
-/*(a) 12 STAT majors made an A in Course1 in 201720.*/
-
-/*(b) 15 STAT majors made an A in Course2 in 201810.*/
-
-/*(c) The following majors made at least one A in Course2 in 201810: ECON, MATH, PETE*/
-
-/*(d) 3 STAT majors withdrew from Course1 in 201930.*/
