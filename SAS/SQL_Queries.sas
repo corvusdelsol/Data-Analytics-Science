@@ -1,9 +1,6 @@
 /***********************************************************************************/
-/*Program Name: CPoulson_HW06_prog.sas*/
-/*Program Location: C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\STAT 657\Homework Assignments\6*/
+/*Program Name: SQL_Queries.sas*/
 /*Author: Casey Poulson*/
-/*Creation Date: 25 February 2022*/
-/*Last Run Date: 27 February 2022*/
 /*Purpose: Proc sql queries, in-line views, dictionary tables*/
 
 
@@ -16,9 +13,9 @@ ODS NOPROCTITLE;
 /*Creating librefs hwdata and mylib, and fileref output for pdf output*/
 /*Opening the PDF output file destination*/
 
-LIBNAME HWDATA 'C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\STAT 657\Homework Assignments\HWDATA' access=readonly;
-LIBNAME MYLIB 'C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\STAT 657\Homework Assignments\MYLIB';
-FILENAME output 'C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\STAT 657\Homework Assignments\6\CPoulson_HW06_output.pdf';
+LIBNAME HWDATA '~PATH\HWDATA' access=readonly;
+LIBNAME MYLIB '~PATH\MYLIB';
+FILENAME output '~PATH\SQL_Queries_output.pdf';
 ODS PDF FILE= output;
 
 /*(2) Selecting pkey, major, term, and grade columns from first in-line view dfw*/
@@ -121,16 +118,3 @@ run;
 /*(9) Closing the PDF ODS output file*/
 
 ODS PDF CLOSE;
-
-
-/*(12) */
-/*(a) The largest interval between the DFW Term and Pass Term of those who repeated*/
-/*601 was 210.*/
-
-/*(b) The Load_Date column type is numeric, and the format is date9., which I supplied.*/
-
-/*(c) Sashelp.vcolumn reports all numeric variables first, and then character variables.*/
-/*The Column Position column starts at zero, and then increases in increments of 8 for*/
-/*each column, as that is the given default Column Length for each variable (8 bytes).*/
-
-/*(d) There are 26 rows in the populated table mylib.grades.*/
