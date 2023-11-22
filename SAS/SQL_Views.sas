@@ -1,9 +1,6 @@
 /***********************************************************************************/
-/*Program Name: CPoulson_HW07_prog.sas*/
-/*Program Location: C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\STAT 657\Homework Assignments\7*/
+/*Program Name: SQL_Views.sas*/
 /*Author: Casey Poulson*/
-/*Creation Date: 3 March 2022*/
-/*Last Run Date: 7 March 2022*/
 /*Purpose: Creating and reporting sql views, using proc fedsql*/
 
 
@@ -16,8 +13,8 @@ ODS NOPROCTITLE;
 /*Creating libref mylib, and fileref output for pdf output*/
 /*Opening the PDF output file destination*/
 
-LIBNAME MYLIB 'C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\STAT 657\Homework Assignments\MYLIB';
-FILENAME output 'C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\STAT 657\Homework Assignments\7\CPoulson_HW07_output.pdf';
+LIBNAME MYLIB '~PATH\MYLIB';
+FILENAME output '~PATH\SQL_Views_output.pdf';
 ODS PDF FILE= output;
 
 /*(2) Creating view mylib.dfw as defined*/
@@ -113,17 +110,3 @@ QUIT;
 /*Closing the PDF ODS output file*/
 
 ODS PDF CLOSE;
-
-/*(11) */
-/*(a) PROC CONTENTS shows mylib.dfw view has . observations, which denotes a missing*/
-/*value or no observations, as this is merely a view and not a dataset.*/
-
-/*(b) PROC CONTENTS reports that mylib.dfw view is sorted by TERM. This is due to the*/
-/*Group By clause in the create view statement, which groups by TERM.*/
-
-/*(c) 201730(Fall 2017) had the most Students with 113 students.*/
-
-/*(d) The mean DFW percentage is 15.24665%.*/
-
-/*(e) From PROC FEDSQL, the second highest term and dfw percentage is */
-/*201910(Spring 2019) with 21.7% of students with DFW grades.*/
