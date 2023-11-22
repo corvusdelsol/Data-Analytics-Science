@@ -1,10 +1,8 @@
-#Homework 08_STAT 604
-#"C:/Users/rockc/OneDrive/Documents/A&M/Spring 2021/STAT 604/Homework/8"
-#Created by Casey Poulson on 02-21-2021
+#Function_Creation
+#Created by Casey Poulson 
 #Purpose:Using iterative calculations to create functions and graphics.
-#Last executed: 02-24-2021
 Sys.time()
-setwd("C:/Users/rockc/OneDrive/Documents/A&M/Spring 2021/STAT 604/Homework/8")
+setwd("~PATH")
 
 #Housekeeping
 #view contents of workspace
@@ -12,8 +10,8 @@ ls()
 #clear workspace
 #rm(list=ls())
 
-#(1)Load HW07 workspace
-load("C:/Users/rockc/OneDrive/Documents/A&M/Spring 2021/STAT 604/Homework/7/HW07.RData")
+#(1)Load workspace
+load("~PATH/file.RData")
 #view contents of workspace
 ls()
 
@@ -73,7 +71,7 @@ EMA7 <- function(county,N=7,data=USATEX,stdate="2020-03-15")
 	" where ",alpha==(2/(1+N)))),font=0.95,adj=0)}
 
 #(5)opening pdf graphics file
-pdf("C:/Users/rockc/OneDrive/Documents/A&M/Spring 2021/STAT 604/Homework/8/CPoulson_HW08_graphics.pdf",width=11,height=8.5)
+pdf("~PATH/graphics.pdf",width=11,height=8.5)
 
 #(6)setting graphics parameters
 #2 columns per page
@@ -99,15 +97,3 @@ for(i in X) {EMA7(county=i,stdate="2020-04-01")}
 
 #(11)De-bugging
 graphics.off()
-
-#(12)additional questions
-#(a)There are 318 observations in the Brazos county dataframe.
-
-#(b)Raising the N-value lowers the moving average(purple line)at this peak.
-
-#(c)The moving average for Galveston county seems to be higher in the interval of 
-#100 to 150 days since 2020-03-2015 than that of Williamson county.
-#Also, in the interval of 250-300+ days since 2020-03-15: Williamson county appears to fluctuate
-#more than Galveston county. Williamson county appears to reach 500 cases in a day before Galveston county does so.
-#Looking at the second peak on the graph, Galveston county case numbers increases more gradually than does 
-#Williamson county. This does make some logical sense, as Williamson county has nearly twice the population than Galveston.
