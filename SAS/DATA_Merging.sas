@@ -1,10 +1,6 @@
 /*************************************************************************/
-/*Program Name: CPoulson_HW03_prog.sas*/
-/*Program Location: C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\
-                    STAT 657\Homework Assignments\3*/
+/*Program Name: DATA_Merging.sas*/
 /*Author: Casey Poulson*/
-/*Creation Date: 19 January 2022*/
-/*Last Run Date: 24 January 2022*/
 /*Purpose: Merging and manipulating data, creating formats, libraries, and displaying descriptive statistics*/
 
 
@@ -14,9 +10,9 @@ FOOTNOTE;
 ODS NOPROCTITLE;
 
 /*(1) Creating librefs hwdata and mylib, and fileref output for pdf output*/
-LIBNAME hwdata "C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\STAT 657\Homework Assignments\HWDATA" access=readonly;
-LIBNAME mylib "C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\STAT 657\Homework Assignments\MYLIB";
-FILENAME output "C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\STAT 657\Homework Assignments\3\CPoulson_HW03_output.pdf";
+LIBNAME hwdata "~PATH\HWDATA" access=readonly;
+LIBNAME mylib "~PATH\MYLIB";
+FILENAME output "~PATH\DATA_Merging_output.pdf";
 
 /*(2) Creating a permanent custom format term_length*/ 
 PROC FORMAT lib=mylib.myfmts;
@@ -97,23 +93,3 @@ run;
 
 /*(10) Closing the PDF ODS output file*/
 ODS PDF CLOSE;
-
-/*(13) Questions*/
-/*(a) 559 students who were eligible for Course 2 only took Course 1 */
-
-/*(b) 92 students took both Course 1 and Course 2*/
-
-/*(c) 20 students took Course 2 with no record of them having taken Course 1*/
-
-/*(d) There were 2 students with abnormal term lengths, as seen in the output of step 6.*/
-/*One of these students is recorded of having taken Course 1 in the Fall of 2019, and having taken*/
-/*Course 2 in the Spring of 2019. So this student took the two courses in the wrong order.*/
-/*The other student appears to have done the exact same thing in 2018.*/
-
-/*(e) Only 2.17% of students (2 students) who took both courses waited 7 or more terms after having completed*/
-/*Course 1, before taking Course 2.*/
-
-		
-		
-		
-
