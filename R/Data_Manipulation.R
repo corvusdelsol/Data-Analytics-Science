@@ -1,11 +1,8 @@
-#Homework 05_STAT 604
-#"C:/Users/rockc/OneDrive/Documents/A&M/Spring 2021/STAT 604/Homework/5"
-#Created by Casey Poulson on 02-06-2021
+#Data Manipulation
 #Purpose:working with data frame specifications, adjusting values and names, working with strings,
 #merging data frames, adding new columns, etc.
-#Last executed: 02-06-2021
 Sys.time()
-setwd("C:/Users/rockc/OneDrive/Documents/A&M/Spring 2021/STAT 604/Homework/5")
+setwd("~PATH")
 
 #(1)Housekeeping
 #view contents of workspace
@@ -14,7 +11,7 @@ ls()
 #rm(list=ls())
 
 #(2)load COVID workspace
-load("C:/Users/rockc/OneDrive/Documents/A&M/Spring 2021/STAT 604/R Data files/Covid.RData")
+load("~PATH/Covid.RData")
 #view contents pf COVID workspace
 ls()
 str(USA_Daily)
@@ -49,7 +46,7 @@ COVID_TEX[order(COVID_TEX[3],decreasing=TRUE),-2]
 
 #(7)using cat and paste functions to output Texas csv file
 cat(paste(COVID_TEX$FIPS,COVID_TEX$COUNTY_NAME,COVID_TEX$Population,"\n"),
-file="C:/Users/rockc/OneDrive/Documents/A&M/Spring 2021/STAT 604/Homework/5/COVID_TEX.csv",sep=" ")
+file="~PATH/COVID_TEX.csv",sep=" ")
 
 #(8)Create new data frame by merging USA_Daily and COVID_TEX data frames with specifications
 USATEX <- merge(USA_Daily[USA_Daily$PROVINCE_STATE_NAME=="Texas",c(2,4,12,1,7,13)],COVID_TEX,all=FALSE)
@@ -95,12 +92,4 @@ rm(USA_Daily,COVID_TEX)
 ls()
 
 #(12)save this workspace as follows
-save.image("C:\\Users\\rockc\\OneDrive\\Documents\\A&M\\Spring 2021\\STAT 604\\Homework\\5\\TX_Covid.RData")
-
-#(13)
-#(a)There were 950,670 observations of 18 variables loaded in this csv file
-#(b)There were 256 observations created in the Texas Population subset
-#(c)Travis county has population 1,273,954 people.
-#(d)The most populous county is Harris with population 4,713,325 people. 
-#(d)The least populous county is Loving with population 169 people.
-#(e)There were 18 new cases reported on Thursday,10-15-2020 in Anderson county.
+save.image("~PATH\\TX_Covid.RData")
