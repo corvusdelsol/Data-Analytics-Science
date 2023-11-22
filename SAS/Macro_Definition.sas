@@ -1,9 +1,6 @@
 /***********************************************************************************/
-/*Program Name: CPoulson_HW10_prog.sas*/
-/*Program Location: C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\STAT 657\Homework Assignments\10*/
+/*Program Name: Macro_Definition.sas*/
 /*Author: Casey Poulson*/
-/*Creation Date: 02 April 2022*/
-/*Last Run Date: 11 April 2022*/
 /*Purpose: Defining and calling macros with iterative and data dependent processing*/
 
 
@@ -21,9 +18,9 @@ OPTIONS SYMBOLGEN MPRINT MLOGIC FMTSEARCH=(mylib.myfmts) nodate;
 /*Libname statements to assign librefs to libraries, protecting hwdata*/
 /*Creating output fileref for pdf output, and opening the file destination*/
 
-LIBNAME HWDATA 'C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\STAT 657\Homework Assignments\HWDATA' access=readonly;
-LIBNAME MYLIB 'C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\STAT 657\Homework Assignments\MYLIB';
-FILENAME output 'C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\STAT 657\Homework Assignments\10\CPoulson_HW10_output.pdf';
+LIBNAME HWDATA '~PATH\HWDATA' access=readonly;
+LIBNAME MYLIB '~PATH\MYLIB';
+FILENAME output '~PATH\Macro_Definition_output.pdf';
 ODS PDF FILE= output style=sapphire;
 
 /*(1) */
@@ -116,16 +113,3 @@ run;
 /*Closing the PDF ODS output file*/
 
 ODS PDF CLOSE;
-
-/*(6) */
-/*(a) The maximum amount of time between Course1 and Course2 for Students in*/
-/*Fall 2018 is 280.*/
-
-/*(b) ECON and MISY majors were also in the grade distribution in Fall 2018.*/
-/*7 of these non-STAT majors made a B. Including STAT majors, 34 students made*/
-/*a B in Fall 2018 Course1.*/
-
-/*(c) 3 students in Spring 2017 took over a year between course1 and course2.*/
-
-/*(d) The MLOGIC system option generated the message. The number after the word*/
-/*now in the log is 13.*/
