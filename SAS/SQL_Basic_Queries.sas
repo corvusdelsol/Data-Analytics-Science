@@ -1,10 +1,6 @@
 /***********************************************************************************/
-/*Program Name: CPoulson_HW04_prog.sas*/
-/*Program Location: C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\STAT 657\
-Homework Assignments\4*/
+/*Program Name: SQL_Basic_Queries.sas*/
 /*Author: Casey Poulson*/
-/*Creation Date: 28 January 2022*/
-/*Last Run Date: 31 January 2022*/
 /*Purpose: Basic SQL queries, creating and joining tables, displaying output*/
 
 
@@ -16,11 +12,11 @@ ODS NOPROCTITLE;
 
 /*Creating librefs hwdata and mylib, and fileref output for pdf output*/
 
-LIBNAME hwdata "C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\STAT 657\Homework Assignments\HWDATA" access=readonly;
+LIBNAME hwdata "~PATH\HWDATA" access=readonly;
 
-LIBNAME mylib "C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\STAT 657\Homework Assignments\MYLIB" access=readonly;
+LIBNAME mylib "~PATH\MYLIB" access=readonly;
 
-FILENAME output "C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\STAT 657\Homework Assignments\4\CPoulson_HW04_output.pdf";
+FILENAME output "~PATH\SQL_Basic_Queries_output.pdf";
 
 /*(2) Opening the PDF output file destination*/
 
@@ -100,25 +96,3 @@ run;
 /*(9) Closing the PDF ODS output file*/
 
 ODS PDF CLOSE;
-
-/*(12)*/
-/*(a) NOTE: Statement transforms to: */
-/*select COURSE1.MAJOR, COURSE1.TERM, COURSE1.COURSE, COURSE1.GRADE, COURSE1.PKEY*/
-/*from HWDATA.COURSE1;*/
-
-/*(b) The format of the term column in hwdata.COURSE2 is BEST. and the label is TERM.*/
-
-/*(c) The data type of the COURSE column in hwdata.COURSE 2 is character. The length is 7,*/
-/*and the following syntax defined the column (step 3c of this program):*/
-/*COURSE char(7) format=$7. informat=$7. label='COURSE'*/
-
-/*(d) 201730 (Fall 2017) Course 1 term had the highest number of students in course 2 with 15 students.*/
-
-/*(e) The order of the columns in the table I created with SQL is the same order that I listed in*/
-/*the SELECT clause. The order of the columns in the table from the previous assignment happens to*/
-/*be the same since I listed them similarly in the MERGE statement. The MERGE statement determines*/
-/*the order of columns by taking the order from the first dataset, and then appending to it the*/
-/*columns from subsequent datasets. PROC SQL determines column order simply by the order columns*/
-/*are listed in the SELECT clause.*/
-
-
