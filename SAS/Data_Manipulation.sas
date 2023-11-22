@@ -1,9 +1,6 @@
 /***********************************************************************************/
-/*Program Name: CPoulson_HW12_prog.sas*/
-/*Program Location: C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\STAT 657\Homework Assignments\12*/
+/*Program Name: Data_Manipulation.sas*/
 /*Author: Casey Poulson*/
-/*Creation Date: 24 April 2022*/
-/*Last Run Date: */
 /*Purpose: Data manipulation with arrays,*/
 /*applying user-created functions and subroutines*/
 
@@ -11,11 +8,11 @@
 /*(3) Libname statements to assign librefs to libraries, protecting hwdata*/
 /*Creating output fileref for pdf output, and opening the file destination*/
 
-LIBNAME HWDATA 'C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\STAT 657\Homework Assignments\HWDATA' access=readonly;
+LIBNAME HWDATA '~PATH\HWDATA' access=readonly;
 
-LIBNAME MYLIB 'C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\STAT 657\Homework Assignments\MYLIB';
+LIBNAME MYLIB '~PATH\MYLIB';
 
-FILENAME output 'C:\Users\rockc\OneDrive\Documents\A&M\2022\Spring 2022\STAT 657\Homework Assignments\12\CPoulson_HW12_output.pdf';
+FILENAME output '~PATH\Data_Manipulation_output.pdf';
 
 ODS PDF FILE= output style=sapphire;
 
@@ -130,20 +127,3 @@ run;
 /*Closing the PDF ODS output file*/
 
 ODS PDF CLOSE;
-
-/*(14)*/
-/*(a) The average GPA for term code 30 for 2020 is 3.377.*/
-
-/*(b) There were no terms with INEN majors below average.*/
-
-/*(c) There were 6 terms with ECON majors below average.*/
-
-/*(d) The average GPA for STAT majors in Summer 2020 was 3.684.*/
-
-
-
-	
-
-
-
-
