@@ -1,12 +1,8 @@
 /*****************************************/
-/*Program Name: CPoulson_HW11_prog.sas*/
-/*Date Created: 21 March 2021*/
+/*Program Name: Conditional_Statements.sas*/
 /*Author: Casey Poulson*/
 /*Purpose: Using conditional statements and creating and subsetting data sets.*/
-/*Program Location: C:\Users\rockc\OneDrive\Documents\A&M\Spring 2021\STAT 604\Homework\11*/
 
-/*Inputs: */
-/*Outputs: */
 
 /*(1) Clearing titles, footnotes, and proc titles on ods*/
 TITLE;
@@ -14,8 +10,8 @@ FOOTNOTE;
 ODS NOPROCTITLE;
 
 /*(2) Creating mylib library containing covid_19_cases dataset, and fileref for pdf output file*/
-LIBNAME mylib "C:\Users\rockc\OneDrive\Documents\A&M\Spring 2021\STAT 604\SAS Data files";
-FILENAME output "C:\Users\rockc\OneDrive\Documents\A&M\Spring 2021\STAT 604\Homework\11\CPoulson_HW11_output.pdf";
+LIBNAME mylib "~PATH";
+FILENAME output "~PATH\output.pdf";
 
 /*(3) Creating 3 datasets named on following DATA line. Viewing PDV for first two iterations with note before the set statement.*/
 /*Selecting input dataset and which variables to drop from output, only reading rows from "Texas".*/
@@ -62,18 +58,3 @@ run;
 
 /*(8) Closing PDF Destination*/
 ODS PDF CLOSE;
-
-/*(9)*/
-/*(a)The first PDV written to the log shows the columns and are initialized as missing, it shows 0 errors and _N_=1 as the first iteration.*/
-/*The second PDV written to the log shows the columns supplied with values for the first observation, 0 errors, and still _N_=1 since it is*/
-/*still on the first iteration. This PDV is before the run statement is executed.*/
-/*The third PDV written to the log shows the columns still supplied with values from the first observation.*/
-/*It shows 0 errors and _N_=2 since it is about to begin the second iteration of the DATA step before the set statement.*/
-
-/*(b)There were 69,120 observations read from the covid_19_cases dataset.*/
-
-/*(c)There were 69,120 observations written to the temporary dataset work.texcovid.*/
-
-/*(d)Dallas county had the highest difference value on May 4th. Harris county had the highest difference value on June 4th.*/
-
-/*(e)The value of Cases for Dallas county increased by 6,873 from May 4th to June 4th (11,243-4,370).*/
